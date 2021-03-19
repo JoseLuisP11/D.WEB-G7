@@ -1,8 +1,16 @@
-require 'note'
-    RSpec.describe Note,     "#create" do
-	    context "" do
+require 'rails_helper'
+require './app/models/note'
+
+
+
+    describe Note do
+      describe "#new" do	    
 	    it "should create a note" do
-	
+            note=Note.new(title:"Note Title",description:"Note description")
+            expect(note.new).to eq(true)
         end
 	    end
     end
+
+
+  
