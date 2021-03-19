@@ -7,7 +7,7 @@ require './app/models/note'
       describe "#new" do	    
 	    it "should create a note" do
             note=Note.new(title:"Note Title",description:"Note description")
-            expect(note.new).to eq(true)
+            expect(note.title).to eq("Note Title")
         end
 	    end
     end

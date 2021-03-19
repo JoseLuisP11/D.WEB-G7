@@ -7,4 +7,9 @@ class NotesController < ApplicationController
 
   def show
   end
+
+  # GET /notes/new
+  def new
+    @note = Note.new
+  end
 end
