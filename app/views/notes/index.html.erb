@@ -1,2 +1,37 @@
-<h1>Notes#index</h1>
-<p>Find me in app/views/notes/index.html.erb</p>
+<div class="container-fluid" >
+    <ul style="margin:20px;padding:10px;">
+        <li><a><%= link_to 'New Note', new_note_path , class:"navbar-brand text-light"%></a></li>
+    </ul>
+  <div class="card" id="tarjeta">
+    <div class="row m-2"  >
+      <% @notes.each do |note| %>
+          <div class="col-12 col-md-2" style="margin-top:10px;">
+            <div draggable="true" class="card nota" style="width:auto;max-height: auto;min-height: 20vh;">
+              <div class="card-body" style="text-align: center;"> 
+              
+               <h5 class="card-title" style="text-decoration:none;font-weight: bold;"><%= link_to note.title, note %></h5>
+                <p class="card-text" id="textoNota"><%= note.description %></p>
+                <br/>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col" style="display:inline-block;width:50%;">
+                      <table>
+                      <td id="icono">
+                      <%= link_to (image_tag "edit.png" , style: 'height:30px;width:30px;' ), edit_note_path(note), class:"btn hide" %>
+                      </td>
+                      <td id="icono">
+                      <%= link_to (image_tag "trash.png", style: 'height:30px;width:30px;' ), note,class:"btn hide", method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+

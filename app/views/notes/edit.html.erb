@@ -1,2 +1,9 @@
-<h1>Notes#edit</h1>
-<p>Find me in app/views/notes/edit.html.erb</p>
+<div class="card-body", id="tarjeta">
+    <h1>Editing Note</h1>
+
+    <%= render 'form', note: @note %>
+    <br/><br/>
+    <%= link_to 'Show', @note , class:"btn btn-secondary" %> 
+    &nbsp;&nbsp;
+    <%= link_to 'Back', notes_path, class:"btn btn-secondary" %>
+</div>
