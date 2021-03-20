@@ -18,16 +18,19 @@ describe Note do
 
   context '#update' do
     it 'should update a note' do
-      note = Note.update(title: 'Note Title', description: 'Note description')
-      expect(note.title).to eq('Note Title')
+      note = Note.create(title: 'Note Title', description: 'Note description')
+      note.update(title: 'Note', description: 'Note description')
+      expect(note.title).to eq('Note')
     end
   end
 
   context '#delete' do
     it 'should delete a note' do
-      note = Note.delete(title: 'Note Title', description: 'Note description')
-      expect(note.title).to eq('Note Title')
+      note = Note.create(title: 'Note Title', description: 'Note description')
+      note.destroy
+      expect(Note.find_by(id: note.id)).to be_nil
+             
     end
   end
-  
+
 end
