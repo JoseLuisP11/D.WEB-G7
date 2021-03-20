@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  before_action :set_note, only: %i[ show edit update destroy ]
+  
   def index
     @notes = Note.all 
   end
@@ -39,8 +41,11 @@ class NotesController < ApplicationController
     redirect_to root_path
   end
 
-  private
-
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_note
+    @note = Note.find(params[:id])
+  end
   # Only allow a list of trusted parameters through.
   def note_params
     params.require(:note).permit(:title, :description)
