@@ -1,2 +1,15 @@
-<h1>Notes#show</h1>
-<p>Find me in app/views/notes/show.html.erb</p>
+<div class="card-body", id="tarjeta">
+  <p>
+    <strong>Title:</strong>
+    <%= @note.title %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @note.description %>
+  </p>
+  <br/><br/>
+  <%= link_to 'Edit', edit_note_path(@note), class:"btn btn-secondary" %> 
+  &nbsp;&nbsp;
+  <%= link_to 'Back', notes_path , class:"btn btn-secondary"%>
+</div>

@@ -1,7 +1,8 @@
+
+<%=render 'home/header' %>
+
+
 <div class="container-fluid" >
-    <ul style="margin:20px;padding:10px;">
-        <li><a><%= link_to 'New Note', new_note_path , class:"navbar-brand text-light"%></a></li>
-    </ul>
   <div class="card" id="tarjeta">
     <div class="row m-2"  >
       <% @notes.each do |note| %>
