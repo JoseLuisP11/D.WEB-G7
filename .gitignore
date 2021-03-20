@@ -42,4 +42,3 @@ Gemfile
 yarn-debug.log*
 .yarn-integrity
 
-app/views/home/_header.html.erb
