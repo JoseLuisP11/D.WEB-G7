@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     
     
-    let items = document.querySelectorAll('.card .nota');
+    let items = document.querySelectorAll('.card .note');
     items.forEach(function(item) {
       item.addEventListener('dragstart', handleDragStart, false);
       item.addEventListener('dragenter', handleDragEnter, false);
