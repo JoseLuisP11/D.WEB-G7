@@ -19,7 +19,11 @@
     <%= form.text_field :description ,class:"form-control",placeholder:"Description" %>
   </div>
 <br/>
-  
+  <div class="field form-group">
+    <% form.text_field :image %>
+    <%= form.file_field :image %>
+  </div>
+<br/>
   
 <br/>
   <div class="actions">

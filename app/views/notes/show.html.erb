@@ -6,6 +6,14 @@
   </p>
 
   <p>
+    <% if @note.image.blank? %>
+        
+    <% else %>
+         <%= image_tag(@note.image , style:'width:auto;height:200px') %>
+    <% end %> 
+  </p>
+  
+  <p>
     <strong>Description:</strong>
     <%= @note.description %>
   </p>
