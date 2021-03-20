@@ -16,5 +16,18 @@ describe Note do
     end
   end
 
+  context '#update' do
+    it 'should update a note' do
+      note = Note.update(title: 'Note Title', description: 'Note description')
+      expect(note.title).to eq('Note Title')
+    end
+  end
+
+  context '#delete' do
+    it 'should delete a note' do
+      note = Note.delete(title: 'Note Title', description: 'Note description')
+      expect(note.title).to eq('Note Title')
+    end
+  end
   
 end
