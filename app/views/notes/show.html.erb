@@ -1,22 +1,32 @@
 <%=render 'home/header' %>
 <div class="card-body", id="note_container">
-  <p>
-    <strong>Title:</strong>
-    <%= @note.title %>
-  </p>
 
-  <p>
-    <% if @note.image.blank? %>
-        
-    <% else %>
-         <%= image_tag(@note.image , style:'width:auto;height:200px') %>
-    <% end %> 
-  </p>
-  
-  <p>
-    <strong>Description:</strong>
-    <%= @note.description %>
-  </p>
+  <div class="card-body", id="show-card">
+    <p id="show-title">
+      <strong>Title:</strong>
+      <%= @note.title %>
+    </p>
+    <br/>
+
+    <div class="row">
+      <div class="col-sm">
+        <p>
+          <% if @note.image.blank? %>
+              
+          <% else %>
+              <%= image_tag(@note.image , style:'width:auto;height:200px') %>
+          <% end %> 
+        </p>
+      </div>
+      <div class="col-8">
+        <p>
+          <strong>Description:</strong>
+          <br/>
+          <%= @note.description %>
+        </p>
+      </div>
+    </div>
+  </div>
   <br/><br/>
   <%= link_to 'Edit', edit_note_path(@note), class:"btn btn-secondary" %> 
   &nbsp;&nbsp;

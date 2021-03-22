@@ -1,4 +1,3 @@
-
 <%=render 'home/header' %>
 
 <div class="container-fluid" >
@@ -13,7 +12,7 @@
                   <% else %>
                     <%= image_tag(note.image , style:'margin-bottom:15px;max-width:100%;max-height:100%;', class:"card-img-top") %> 
                 <% end %>
-               <h5 class="card-title" style="text-decoration:none;font-weight: bold;"><%= link_to note.title, note %></h5>
+               <h5 class="card-title" style="text-decoration:none;font-weight: bold;"><%= link_to note.title, note, class:"s-link" %></h5>
                 <p class="card-text" id="note_text"><%= note.description %></p>
                 <br/>
                 <div class="container-fluid">
