@@ -38,7 +38,7 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
     @note.destroy
 
-    redirect_to root_path
+    redirect_to @note
   end
 
 private
