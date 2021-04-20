@@ -8,16 +8,16 @@
                         <h1 class="text-light">Sign In</h1>
                     </div>
                     <div class="form-group mx-sm-4 pt-3">
-                        <%= f.email_field :email, class:"form-control text-light", placeholder:"Email", autofocus: true, autocomplete: "email" %>
+                        <%= f.email_field :email, class:"form-control", placeholder:"Email", autofocus: true, autocomplete: "email" %>
                     </div>
                     <br/>
                     <div class="form-group mx-sm-4 pb-3">
-                        <%= f.password_field :password, class:"form-control text-light", placeholder:"Password", autocomplete: "current-password" %>
+                        <%= f.password_field :password, class:"form-control", placeholder:"Password", autocomplete: "current-password" %>
                     </div>
                     
                     <div class="form-group mx-sm-4 pb-2">
                     <% if devise_mapping.rememberable? %>
-                      <div class="field form-group">
+                      <div class="field form-group text-light">
                         <%= f.check_box :remember_me, class:"form-check-input" %>
                         <%= f.label :remember_me %>
                       </div>

@@ -1,18 +1,27 @@
 <div class="card-body", id="note_container">
   <div class="card-body", id="show-card">
-    <p>
-      <strong>User:</strong>
-      <%= @user.name %>
-    </p>
-
-
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
-    <br/><br/>
-  
-    &nbsp;&nbsp;
-    <%= link_to 'Back', notes_path , class:"btn btn-secondary"%>
+    <div class="row justify-content-center">
+      <div class="col-sm-6 ">
+        <p class="text-center" style=" padding: 70px 0;">
+          <strong>User:</strong>
+          <%= @user.name %>
+          <br/><br/>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </p>
+        <br/><br/>
+      </div>
+      <div class="col-sm-6">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, class:" rounded-circle", style:"max-height:400px;max-width:400px;" %>             
+        <% end %>
+      </div>
+      &nbsp;&nbsp;
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <%= link_to 'Back', notes_path , class:"btn btn-secondary"%>
+      </div>
+    </div>
   </div>
 </div>
