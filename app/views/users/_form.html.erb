@@ -1,0 +1,57 @@
+
+<div class="card-body", style="background-color: #fff;margin: 20px;height: 91%;width: 95%;border-style: groove;">
+  <div class="card-body">
+  <%= form_with(model: user) do |f| %>
+
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar, class:" rounded-circle", style:"height:100px;width:100px;" %>
+        <% else %>
+        
+        <% end %>
+          <% f.label :email %><br />
+         <%= f.file_field :avatar %>
+      </div>
+     </div> 
+  </div>
+<br />
+<div >
+    <div class="field form-group col-sm">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field form-group col-sm">
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="field form-group col-sm">
+      <br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"password_confirmation" %>
+    </div>
+
+    <div class="field form-group col-sm">
+      <%= f.label :current_password %> <br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+  <br />
+
+  <div class="row">
+    <div class="col-sm">
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+</div>
+  
+<% end %>
+
+
+

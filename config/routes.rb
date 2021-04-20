@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :notes
   get 'users/index'
   get 'notes/index'
-  get 'home/users'
   get 'home/index'
   root 'notes#index'
 end

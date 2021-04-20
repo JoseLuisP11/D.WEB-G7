@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
 
   def destroy
-    @user.destroy!
+    @user.destroy
   
     respond_to do |format|
       format.html { redirect_to notes_url, notice: "CAMBIAR." }
