@@ -6,6 +6,10 @@
       <ul style="margin:20px;padding:10px;">
         <li><a><%= link_to 'New Note', new_note_path , class:"navbar-brand text-light"%></a></li>
         <li><a><%=link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"navbar-brand text-light" %></a></li>
+        <% if current_user.admin %>
+          <li><a><%= link_to 'Usuarios', home_users_path , class:"navbar-brand text-light"%></a></li>
+          <li><a><%= link_to 'Notas', notes_path , class:"navbar-brand text-light"%></a></li>
+        <% end %>
       </ul>
       <div class="Day">
       <p id=miDia></p>

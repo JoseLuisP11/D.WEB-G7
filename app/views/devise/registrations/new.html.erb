@@ -8,8 +8,16 @@
                         <h1 class="text-light">Sign Up</h1>
                     </div>
                     <div class="form-group mx-sm-4 pt-3">
+                        <% f.label :avatar %><br />
+                         <%= f.file_field :avatar %>
+                    </div>
+                    <div class="form-group mx-sm-4 pt-3">
+                        <% f.label :name %>
+                        <%= f.text_field :name, class:"form-control text-light", placeholder:"Name", autofocus: true, autocomplete: "name" %>
+                    </div>
+                    <div class="form-group mx-sm-4 pt-3">
                         <% f.label :email %>
-                        <%= f.email_field :email, class:"form-control text-light", placeholder:"Email", autofocus: true, autocomplete: "email" %>
+                        <%= f.email_field :email, class:"form-control text-light", placeholder:"Email", autocomplete: "email" %>
                     </div>
                     <br/>
                     <div class="form-group mx-sm-4 pb-3">
@@ -20,6 +28,7 @@
                           <%= f.password_field :password, autocomplete: "new-password", class:"form-control text-light", placeholder:"Password" %> 
                           <% f.label :password_confirmation %><br />
                       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control text-light", placeholder:"Repeat Password" %>
+                    
                     <br/>
                     <div class="actions">
                         <%= f.submit "Sign up",class:'btn btn-primary' %>

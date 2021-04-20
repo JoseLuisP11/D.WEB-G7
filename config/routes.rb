@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
+  resources :users
   resources :notes
-
-  
+  get 'users/index'
   get 'notes/index'
-  get 'notes/edit'
-  get 'notes/show'
+  get 'home/users'
   get 'home/index'
-  
   root 'notes#index'
 end
