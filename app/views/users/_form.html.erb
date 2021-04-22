@@ -11,32 +11,26 @@
             <% f.label :email %><br />
             <%= f.file_field :avatar %>
         </div>
+        
+        <br />
+        <div class="field form-group col-sm">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        </div>
+
         <br />
         <div class="field form-group col-sm">
         <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autocomplete: "email" %>
         </div>
+    
 
         <div class="field form-group col-sm">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
-        <% if @minimum_password_length %>
-            <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
-        <% end %>
+            <%= f.label :admin %> <br />
+            <%= f.check_box :admin , class:"form-check-input" %>
         </div>
-
-        <div class="field form-group col-sm">
-        <br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"password_confirmation" %>
-        </div>
-
-        <div class="field form-group col-sm">
-        <%= f.label :current_password %> <br />
-        <%= f.password_field :current_password, autocomplete: "current-password" %>
-        </div>
-        <br />
-
+ <br />
+ 
         <div class="row">
             <div class="col-sm">
             <div class="actions">
