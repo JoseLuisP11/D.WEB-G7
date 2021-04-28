@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+
+  get 'notes/index'
+  get 'notes/edit'
+  get 'notes/show'
   get 'home/index'
- resources :notes
+  root 'home#index'
 
- 
- get 'notes/index'
- get 'notes/edit'
- get 'notes/show'
+  resources :users
+  resources :notes
 
- 
- root 'home#index'
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 end

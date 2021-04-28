@@ -1,0 +1,38 @@
+
+
+<section>
+      <div class="form-container">
+      <h1>Logup Form</h1>
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <form>
+  <div class="control">
+    <label for="name">Email</label>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="control">
+    <label for="name">Password</label>
+    <%= form.password_field :password %>
+  </div>
+
+  <div class="control">
+    <label for="name">Password confirmation</label>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div class="control">
+    <%= form.submit %>
+  </div>
+  </form>
+<% end %>
