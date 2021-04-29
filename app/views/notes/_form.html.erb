@@ -26,7 +26,11 @@
     <% form.text_field :image , class:"btn" %>
     
     <%= form.file_field :image , class:"btn b-file" %>
-    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :user_id ,id: :note_user_id , type: :hidden, class:"form-control", value:current_user.id %>
+  </div>
   
 <div class="col-sm">
   <div class="actions">

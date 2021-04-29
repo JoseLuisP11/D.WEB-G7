@@ -22,8 +22,8 @@ end
 
 # POST /notes or /notes.json
 def create
-  @note = Note.new(note_params)
-  #@note = current_user.notes.build(note_params)
+  #@note = Note.new(note_params)
+  @note = current_user.notes.build(note_params)
 
   respond_to do |format|
     if @note.save
@@ -66,6 +66,6 @@ private
   end
   # Only allow a list of trusted parameters through.
   def note_params
-    params.require(:note).permit(:title, :description, :image)
+    params.require(:note).permit(:title, :description, :image, :user_id)
   end
 end
