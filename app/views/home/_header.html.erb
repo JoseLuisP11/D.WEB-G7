@@ -8,6 +8,7 @@
         <% if current_user %>
           <li><a>Logged in as <%= current_user.email %></a></li>
           <li><a><%= link_to "Log Out", logout_path %></a></li>
+          <li><a><%= link_to "Collection", collections_path %></a></li>
         <% end %>
       </ul>
       <div class="Day">

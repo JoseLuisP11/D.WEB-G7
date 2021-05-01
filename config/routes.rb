@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :notes
+  resources :collections
+  get 'collections/index'
+
 
   resources :sessions, only: [:new, :create, :destroy]
   get 'signup', to: 'users#new', as: 'signup'
