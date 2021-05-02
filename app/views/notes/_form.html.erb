@@ -22,6 +22,9 @@
   <div class="field form-group">
     <%= form.text_field :collection_id ,class:"form-control ",placeholder:"Collection" %>
   </div>
+  <div class="field form-group">
+    <%= collection_select(:note, :collection_id, Collection.all, :id, :title, { :class=>'form-control'} ) %>
+  </div>
 <br/>
 <div class="row">
   
