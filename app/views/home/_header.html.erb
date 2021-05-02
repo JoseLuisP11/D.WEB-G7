@@ -6,11 +6,13 @@
       <ul style="margin:20px;padding:10px;">
         <li><a><%= link_to 'New Note', new_note_path , class:"navbar-brand text-light"%></a></li>
         <% if current_user %>
-          
           <li><a><%= link_to "Collection", collections_path , class:"navbar-brand text-light" %></a></li>
         <% end %>
       </ul>
-
+    <div class="Day">
+      <p id=miDia></p>
+      <%= javascript_pack_tag 'my_js' %>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
