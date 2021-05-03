@@ -68,6 +68,6 @@ class CollectionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def collection_params
-      params.require(:collection).permit(:title)
+      params.require(:collection).permit(:title, :user_id)
     end
 end
