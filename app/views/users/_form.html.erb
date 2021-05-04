@@ -30,11 +30,13 @@
     <label for="name">Password confirmation</label>
     <%= form.password_field :password_confirmation %>
   </div>
-  <% if current_user.admin? %>
-    <div class="control">    
-      <%= form.label "Admin" %> 
-      <%= form.check_box :admin %> 
-    </div>
+  <% unless current_user.nil?  %>
+    <% if current_user.admin?  %>
+      <div class="control">    
+        <%= form.label "Admin" %> 
+        <%= form.check_box :admin %> 
+      </div>
+    <% end %>
   <% end %>
   <div class="control">
     <%= form.submit %>

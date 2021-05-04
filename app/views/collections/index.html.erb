@@ -13,7 +13,7 @@
 
       <tbody>
         <% @collections.each do |collection| %>
-         <% if collection.user == current_user %>
+         <% if collection.user == current_user || current_user.admin?%>
           <tr>
             <td><%= collection.title %></td>
             <td><%= link_to 'Show', collection %></td>

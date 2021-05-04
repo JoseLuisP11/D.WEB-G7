@@ -5,6 +5,6 @@ class CreateCollections < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
-    add_index :collections, :title, unique: true
+    add_index :collections, :title
   end
 end

@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_05_02_153653) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.index ["title"], name: "index_collections_on_title", unique: true
+    t.index ["title"], name: "index_collections_on_title"
   end
 
   create_table "notes", force: :cascade do |t|
