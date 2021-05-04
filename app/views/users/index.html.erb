@@ -23,7 +23,6 @@
                     <td><%= user.id %></td>
                     <td><%= user.email %></td>
                     <td class="td-actions text-right">
-                      <%= link_to '<i class="material-icons">person</i>'.html_safe, user %>
                       <%= link_to '<i class="material-icons">edit</i>'.html_safe, edit_user_path(user) %>
                       <%= link_to '<i class="material-icons">close</i>'.html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %>
                     </td>
@@ -43,6 +42,7 @@
             <%= link_to 'New User', new_user_path, class:"btn btn-primary"  %>
           </div>
         </div>
+        
   </div>
 </div>
 

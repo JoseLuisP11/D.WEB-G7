@@ -6,10 +6,12 @@
       <strong>Title:</strong>
       <%= @collection.title %>
     </p>
+    <p>
+     
 <div class="row m-2"  >
     <% @notes = Note.all%>
     <% @notes.each do |note| %>
-    <% if(note.collection_id == @collection.title) %>
+    <% if(Integer(note.collection_id) == @collection.id) %>
     <div class="col-12 col-md-2" style="margin-top:10px;">
             <div draggable="true" class="card note" style="width:auto;max-height: auto;min-height: 20vh;">
               <div class="card-body" style="text-align: center;"> 

@@ -1,4 +1,4 @@
-<div style="padding:20px;">
+<div style="margin-left: 20vw;">
 <%= form_with(model: collection) do |form| %>
   <% if collection.errors.any? %>
     <div id="error_explanation">
@@ -27,6 +27,6 @@
     <%= form.submit %>
   </div>
     <br/>
-  <%= link_to 'Back', collections_path %>
+  <%= link_to 'Back', collections_path, class:"btn btn-secondary" %>
 <% end %>
 </div>
