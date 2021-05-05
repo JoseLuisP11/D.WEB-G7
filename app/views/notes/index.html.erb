@@ -2,7 +2,7 @@
   <div class="card" id="note_container">
     <div class="row m-2"  >
       <% @notes.each do |note| %>
-        <% if note.user == current_user || current_user.admin?%>
+        <% if current_user && (note.user == current_user || current_user.admin?)%>
           <div class="col-12 col-md-2" style="margin-top:10px;">
             <div draggable="true" class="card note" style="width:auto;max-height: auto;min-height: 20vh;">
               <div class="card-body" style="text-align: center;"> 
