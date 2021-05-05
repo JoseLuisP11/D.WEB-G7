@@ -63,6 +63,9 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+      unless @user.id == current_user.id || current_user.admin
+        redirect_to root_path, flash: { error: "You do not have permission to do that." }
+      end
     end
     
     # Only allow a list of trusted parameters through.

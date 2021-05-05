@@ -8,6 +8,9 @@ end
 
 # GET /notes/1 or /notes/1.json
 def show
+  unless current_user 
+    redirect_to root_path, :alert => "Restricted area" 
+  end
 end
 
 # GET /notes/new
@@ -63,6 +66,9 @@ private
   # Use callbacks to share common setup or constraints between actions.
   def set_note
     @note = Note.find(params[:id])
+    unless @note.user_id == current_user.id || current_user.admin
+      redirect_to root_path, flash: { error: "You do not have permission to do that." }
+    end
   end
   # Only allow a list of trusted parameters through.
   def note_params

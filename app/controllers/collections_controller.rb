@@ -21,6 +21,9 @@ class CollectionsController < ApplicationController
 
   # GET /collections/1/edit
   def edit
+    unless current_user 
+      redirect_to root_path, :alert => "Restricted area" 
+    end
   end
 
   # POST /collections or /collections.json
@@ -64,6 +67,9 @@ class CollectionsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_collection
       @collection = Collection.find(params[:id])
+      unless @collection.user_id == current_user.id || current_user.admin
+        redirect_to root_path, flash: { error: "You do not have permission to do that." }
+      end
     end
 
     # Only allow a list of trusted parameters through.
