@@ -54,7 +54,7 @@ body {
 }
 
 #note_container {
-    background-color: #7a72a5;
+    background-color: #518876;
     margin-top: 20px;
     min-height: 85vh;
     border-style: groove;
@@ -104,7 +104,7 @@ body {
 
 .card.note {
     background-color: #ffffff;
-    margin-top: 20px;                    
+    margin-top: 20px;
 }
 
 .s-link {
@@ -112,14 +112,15 @@ body {
     text-decoration: none
 }
 
-#show-card{
+#show-card {
     background-color: #fcfbb5;
     border: 15px solid transparent;
     padding: 15px;
-    border-image:url(border.png) 40% stretch;
+    border-image: url(border.png) 40% stretch;
     border-radius: 10px;
 }
-#show-title{
+
+#show-title {
     font-size: 150%;
-    text-align:center;
+    text-align: center;
 }
