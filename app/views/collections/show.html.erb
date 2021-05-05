@@ -1,7 +1,6 @@
 <div class="container-fluid" style="padding:20px;">
   <div class="card" id="note_container">
-    <p id="notice"><%= notice %></p>
-
+  <br>
     <p>
       <strong>Title:</strong>
       <%= @collection.title %>
@@ -11,7 +10,8 @@
 <div class="row m-2"  >
     <% @notes = Note.all%>
     <% @notes.each do |note| %>
-    <% unless note.collection_id.nil? %>
+    <% unless note.collection_id.eql? "" %>
+    
     <% if(Integer(note.collection_id) == @collection.id) %>
       <div class="col-12 col-md-2" style="margin-top:10px;">
               <div draggable="true" class="card note" style="width:auto;max-height: auto;min-height: 20vh;">

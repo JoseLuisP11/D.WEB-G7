@@ -24,7 +24,8 @@
   <div class="field form-group">
     <% @collection = Collection.all %>
     <label for="note[collection_id]">Colection: </label>&nbsp;&nbsp;
-    <%= collection_select(:note, :collection_id, @collection.where(user: current_user), :id, :title, { :class=>'form-control', :style=>"min-width: 50vw;"} ) %>
+    <%= collection_select(:note, :collection_id, @collection.where(user: current_user), :id, :title,
+      { include_blank: 'Select a collection' },  { :class=>'form-control', :style=>"min-width: 50vw;"}) %>
   </div>
 <br/>
 <div class="row">
