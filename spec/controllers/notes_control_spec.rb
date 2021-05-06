@@ -16,7 +16,7 @@ context '#Note update' do
     end
   end
 
-  context '#Note update' do
+  context '#Note delete' do
     it 'another user cant delete your note' do
       user = User.create(email: 'juan1', password:'123', password_confirmation:'123')      
       session[:user_id] = user.id
