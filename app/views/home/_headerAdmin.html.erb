@@ -23,7 +23,7 @@
     <div >
       <ul style="margin:25px;padding:5px;">
         <% if current_user %>
-          <li><a><%= link_to "Editar perfil", edit_user_path(current_user) , class:"navbar-brand text-light"%></a></li>
+          <li><a><%= link_to "Edit profile", edit_user_path(current_user) , class:"navbar-brand text-light"%></a></li>
           <li><a><%= link_to "Log Out", logout_path , class:"navbar-brand text-light"%></a></li>
         <% end %>&nbsp;
       </ul>
